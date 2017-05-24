@@ -1,0 +1,28 @@
+    <div id="login_signup">
+      
+        <%= form_for(@user) do |f| %>
+        <%= render 'layouts/error_messages', model: f.object %>
+          <div>
+            <%= f.label :name, 'Name' %>
+            <%= f.text_field :name, class: 'txt' %>
+          </div>
+          
+          <div>
+            <%= f.label :email, 'e-mail' %>
+            <%= f.email_field :email, class: 'txt' %>
+          </div>
+          
+          <div>
+            <%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'txt' %>
+          </div>
+          
+          <div>
+            <%= f.label :password_confirmation, 'Confirmation' %>
+            <%= f.password_field :password_confirmation, class: 'txt' %>
+          </div>
+          
+          <%= f.submit 'Sign up', class: 'submit' %>
+        <% end %>
+      
+    </div>

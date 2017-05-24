@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Codememos</title>
     <%= csrf_meta_tags %>
 
@@ -8,7 +11,25 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="<%= controller_name %><%= action_name %>">
+    <svg style="display:none;" class="svg">
+        <defs>
+            <symbol id="icon-quill" viewBox="0 0 32 32">
+                <title>quill</title>
+                <path d="M0 32c4-12 14.469-32 32-32-8.219 6.594-12 22-18 22s-6 0-6 0l-6 10h-2z"></path>
+            </symbol>
+            <symbol id="icon-undo2" viewBox="0 0 32 32">
+                <title>undo2</title>
+                <path d="M23.808 32c3.554-6.439 4.153-16.26-9.808-15.932v7.932l-12-12 12-12v7.762c16.718-0.436 18.58 14.757 9.808 24.238z"></path>
+            </symbol>
+            <symbol id="icon-plus" viewBox="0 0 32 32">
+                <title>plus</title>
+                <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <%= render 'layouts/navbar' %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
   </body>
 </html>

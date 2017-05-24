@@ -1,0 +1,13 @@
+    <header>
+        <p><a href="#" id="logo"><i>Codememo</i></a></p>
+        <ul>
+            <% if logged_in? %>
+              <li><%= current_user.name %></li>
+              <li><%= link_to 'Logout', logout_path, method: :delete, class: 'header_btn' %></li>
+            <% else %>
+                <li><%= link_to 'Signup', signup_path, class: 'header_btn' %></li>
+                <li><%= link_to 'Login', root_path, class: 'header_btn' %></li>
+            <% end %>
+            
+        </ul>
+    </header>

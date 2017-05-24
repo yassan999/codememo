@@ -1,0 +1,19 @@
+    <div id="login_signup">
+        
+        <%= form_for(:session, url: login_path) do |f| %>
+        
+          <div>
+            <%= f.label :email, 'e-mail' %>
+            <%= f.email_field :email, class: 'txt' %>
+          </div>
+          
+          <div>
+            <%= f.label :password, 'Password' %>
+            <%= f.password_field :password, class: 'txt' %>
+          </div>
+          
+          <%= f.submit 'Login', class: 'submit' %>
+        
+        <% end %>
+        
+    </div>
