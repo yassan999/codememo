@@ -4,10 +4,21 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @articles = current_user.articles.order('created_at DESC').page(params[:page]).per(10)
+    
+    unless current_user == @user
+      redirect_to root_path
+    end
   end
 
   def new
     @user = User.new
+    @userpage = current_user
+    
+    if logged_in?
+      flash[:notice] = "ログインしています。"
+      redirect_to @userpage
+    end
   end
 
   def create

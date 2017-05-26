@@ -1,0 +1,323 @@
+@charset "UTF-8";
+$maincolor: #13B3A1;
+$gray1:#95989A;
+$orange1: #FFAF1B;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*共通*/
+
+body {
+    text-align: center;
+    font-family: arial, helvetica, 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, メイリオ, Osaka, 'MS PGothic', sans-serif;
+    font-size: 1rem;
+    line-height: 1.61;
+}
+body#toppagesindex,
+body#usersnew {
+    background-image: url("<%= image_path('code-1839406.png') %>");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+}
+#maindiv {
+    margin-top: 100px;
+    position: relative;
+}
+a {
+    text-decoration: none;
+}
+#iconlink {
+    position: fixed;
+    right: 5%;
+    top: 200px;
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 1em;
+        }
+    }
+    a {
+        color: $maincolor;
+        font-size: 1.25em;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    a.svgicon {
+        display: block;
+        width: 3.5em;
+        height: 3.5em;
+        border-radius: 50%;
+        background: $maincolor;
+        position: relative;
+        &:hover {
+            opacity: 0.8;
+        }
+        .icon {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+        }
+    }
+}
+.icon {
+    width: 2em;
+    height: 2em;
+    fill: #fff;
+}
+.alert {
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+}
+.alert_danger {
+    color: #a94442;
+}
+.alert_success {
+    color: #3c763d;
+}
+.pagination {
+    letter-spacing: -0.4em;
+    margin-bottom: 1em;
+    span {
+        display: inline-block;
+        border-top: 1px solid $gray1;
+        border-left: 1px solid $gray1;
+        border-bottom: 1px solid $gray1;
+        letter-spacing: normal;
+        color: $gray1;
+        &:nth-last-child(1) {
+            border-right: 1px solid $gray1;
+        }
+        a {
+            display: block;
+            padding: 0.6em 0.8em;
+            color: $gray1;
+            &:hover {
+                background: #eee;
+            }
+        }
+    }
+}
+.pagination {
+    .current {
+        display: inline-block;
+        background: #eee;
+        padding: 0.6em 0.8em;
+    }
+}
+
+/*header*/
+
+header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    background: $maincolor;
+    height: 80px;
+    #logo {
+        font-family: 'New Gulim';
+        font-size: 2rem;
+        font-weight: bold;
+        color: #fff;
+        text-decoration: none;
+        margin-left: 1.5em;
+    }
+    ul {
+        display: table;
+        list-style: none;
+        margin-right: 3em;
+        li {
+            display: table-cell;
+            margin-left: 1.5em;
+            a {
+                color: #fff;
+                text-decoration: none;
+                padding: 0.3em 1em;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            .header_btn {
+                border: 1px solid #fff;
+                border-radius: 5px;
+                margin-left: 1em;
+                &:hover {
+                    opacity: 0.8;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/*index.signup*/
+
+#login_signup {
+    font-size: 1.25rem;
+    text-align: right;
+    display: inline-block;
+    margin: 100px auto;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 3em;
+    border: 1px solid $gray1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    form {
+        div {
+            text-align: left;
+            label {
+                color: #444;
+            }
+            input.txt {
+                display: block;
+                width: 300px;
+                height: 23px;
+                padding: 0.5em;
+                border: 1px solid $gray1;
+                margin: 0.4em auto 2.5em auto;
+            }
+        }
+    }
+    input.submit {
+        display: inline-block;
+        padding: 0.4em 0.7em;
+        border: 1px solid $gray1;
+        background: $maincolor;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.25rem;
+        cursor: pointer;
+        &hover {
+            border: none;
+            opacity: 0.8;
+        }
+    }
+}
+
+/*user*/
+
+a.user_box_link {
+    display: block;
+    width: 65%;
+    margin: 0 auto 2em auto;
+    &:hover {
+        background: #eee;
+        .user_box {}
+    }
+}
+.user_box {
+    text-align: justify;
+    padding: 1em;
+    border: 1px solid $gray1;
+    color: $gray1;
+    text-decoration: none;
+}
+
+/*articles show*/
+
+#articles_show {
+    text-align: justify;
+    display: block;
+    width: 65%;
+    margin: 0 auto 2em auto;
+    pre {
+        display: block;
+        padding: 1em;
+        background: #eee;
+        overflow: auto;
+        margin-bottom: 2em;
+    }
+    h2 {
+        color: $gray1;
+        font-size: 1.625rem;
+        margin-bottom: 1em;
+    }
+    h3 {
+        color: $gray1;
+        font-size: 1.25rem;
+        margin-bottom: 0.5em;
+    }
+}
+.article_comment {
+    padding: 1em;
+    border: 1px solid $gray1;
+}
+
+/*article new edit*/
+
+#articles_newedit {
+    display: block;
+    width: 65%;
+    margin: 0 auto 4em auto;
+    form {
+        text-align: right;
+        div {
+            text-align: left;
+            label {
+                color: $gray1;
+                font-size: 1.25rem;
+            }
+            input.txt {
+                display: block;
+                width: calc(100% - 1em);
+                height: 23px;
+                padding: 0.5em;
+                border: 1px solid $gray1;
+                margin: 0.4em auto 2.5em auto;
+            }
+            textarea {
+                display: block;
+                width: calc(100% - 1em);
+                padding: 0.5em;
+                border: 1px solid $gray1;
+                margin: 0.4em auto 2.5em auto;
+            }
+        }
+    }
+    input.submit {
+        display: inline-block;
+        padding: 0.4em 2em;
+        border: 1px solid $gray1;
+        background: $maincolor;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.25rem;
+        cursor: pointer;
+        &:hover {
+            border: none;
+            opacity: 0.8;
+        }
+    }
+}
+
+/*destroy*/
+
+.destroy_btn {
+    text-align: right;
+    margin-top: 2em;
+    a {
+        padding: 0.4em 2em;
+        border: 1px solid $gray1;
+        background: red;
+        border-radius: 5px;
+        color: #fff;
+        font-size: 1.25rem;
+        &:hover {
+            border: none;
+            opacity: 0.8;
+        }
+    }
+}

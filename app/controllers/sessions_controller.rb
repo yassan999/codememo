@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
       redirect_to @user
     else
       flash.now[:danger] = 'ログインに失敗しました。'
-      render 'new'
+      redirect_back(fallback_location: root_path) 
     end
   end
 

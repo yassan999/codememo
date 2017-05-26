@@ -1,0 +1,36 @@
+    <div id="maindiv">
+
+        <articel id="articles_show">
+            <h2><%= @article.title %></h2>
+            <secttion>
+                <h3>Code</h3>
+                <pre><%= @article.code %></pre>
+            </secttion>
+
+            <secttion>
+                <h3>Comment</h3>
+                <p class="article_comment"><%= @article.comment %></p>
+                <p class="destroy_btn"><%= link_to "削除", @article, method: :delete, data: { confirm: "削除してよろしいですか？" } %></p>
+            </secttion>
+        </articel>
+
+        <div id="iconlink">
+            <ul>
+                <li>
+                    <a class="svgicon" href="<%= user_path(current_user) %>">
+                        <svg class="icon">
+                            <use xlink:href="#icon-undo2" />
+                        </svg>
+                    </a>
+                    <p><%= link_to '一覧', user_path(current_user) %></p>
+                </li>
+                <li>
+                    <a class="svgicon" href="<%= edit_article_path %>">
+                        <svg class="icon">
+                            <use xlink:href="#icon-quill" />
+                        </svg>
+                    </a>
+                    <p><%= link_to '編集', edit_article_path %></p>
+                </li>
+            </ul>
+        </div>

@@ -1,19 +1,25 @@
     <div id="maindiv">
+        
+        <% @articles.each do |article| %>
 
-        <a class="user_box_link" href="#">
+        <a class="user_box_link" href="<%= article_path(article) %>">
             <article class="user_box">
-                <h2>TitleTitleTitleTitle</h2>
-                <p>content contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent contentcontent content</p>
+                <h2><%= article.title %></h2>
+                <p><%= article.comment.truncate(100, omission: '...') %></p>
             </article>
         </a>
+        
+        <% end %>
+        
+        <%= paginate @articles %>
 
     </div>
 
     <div id="iconlink">
-        <a class="svgicon" href="#">
+        <a class="svgicon" href="<%= new_article_path %>">
             <svg class="icon">
                 <use xlink:href="#icon-plus" />
             </svg>
         </a>
-        <p><a href="#">登録</a></p>
+        <p><%= link_to '登録', new_article_path %></link_to></p>
     </div>

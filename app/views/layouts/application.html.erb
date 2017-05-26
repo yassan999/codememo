@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <% case request.fullpath
+        when '/', 'toppages/index', 'signup', 'users/new' %>
+        <meta name="description" content="個人的なコードメモ・すぐに忘れるのでメモ帳にメモするみたいに使えるプライベートなコードメモです">
+    <% else %>
+        <meta name="robots" content="noindex">
+    <% end %>
     <title>Codememos</title>
     <%= csrf_meta_tags %>
 

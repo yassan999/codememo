@@ -1,0 +1,25 @@
+    <div id="maindiv">
+
+        <div id="articles_newedit">
+          
+          <%= form_for(@article) do |f| %>
+            <div>
+              <%= f.label :title, 'Title' %>
+              <%= f.text_field :title, class: 'txt' %>
+            </div>
+            
+            <div>
+              <%= f.label :code, 'Code' %>
+              <%= f.text_area :code, rows: 40, class: 'txt' %>
+            </div>
+            
+            <div>
+              <%= f.label :comment, 'Comment' %>
+              <%= f.text_area :comment, rows: 40, class: 'txt' %>
+            </div>
+            
+            <%= f.submit '登録', class: 'submit' %>
+          <% end %>
+
+        </div>
+    </div>

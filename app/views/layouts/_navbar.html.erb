@@ -1,12 +1,19 @@
     <header>
-        <p><a href="#" id="logo"><i>Codememo</i></a></p>
+        <% if logged_in? %>
+            <h1><i><%= link_to 'Codememo', user_path(current_user), id: 'logo' %></i></h1>
+        <% else %>
+            <h1><i><%= link_to 'Codememo', root_path, id: 'logo' %></i></h1>
+        <% end %>
         <ul>
             <% if logged_in? %>
-              <li><%= current_user.name %></li>
+              <li><%= link_to current_user.name + 'さん', user_path(current_user) %></li>
               <li><%= link_to 'Logout', logout_path, method: :delete, class: 'header_btn' %></li>
             <% else %>
+            <% if request.path == "/" %>
                 <li><%= link_to 'Signup', signup_path, class: 'header_btn' %></li>
+            <% else %>
                 <li><%= link_to 'Login', root_path, class: 'header_btn' %></li>
+            <% end %>
             <% end %>
             
         </ul>
